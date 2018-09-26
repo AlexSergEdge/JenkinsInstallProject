@@ -1,0 +1,39 @@
+---
+        
+  - hosts: localhost
+    tasks:
+    - name: download docker stable rpm package
+      get_url:
+        url: https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-18.03.1.ce-1.el7.centos.x86_64.rpm
+        dest: /etc/docker_package.rpm
+      register: download_result
+      become: True
+     
+    - name: print download result
+      debug:
+        msg: "{{ download_result }}"
+    
+  - hosts: 192.168.10.20
+    tasks:
+    - name: copy rpm packages to host
+      copy:
+        src: /etc/docker_package.rpm
+        dest: /etc/docker_package.rpm
+      register: copy_result
+      become: True
+      
+    - name: print copy result
+      debug: 
+        msg: "{{ copy_result }}" 
+        
+    - name: install docker on host
+      yum:
+        name: /etc/docker_package.rpm
+        state: present
+      register: install_result
+      become: True   
+      
+    - name: print copy result
+      debug: 
+        msg: "{{ install_result }}"   
+    
