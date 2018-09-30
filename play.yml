@@ -33,7 +33,24 @@
       register: install_result
       become: True   
       
-    - name: print copy result
+    - name: print install result
       debug: 
         msg: "{{ install_result }}"   
+    
+    - name: start docker
+      service:
+        name: docker
+        state: started
+      register: startup_result 
+      become: True
+      
+    - name: show docker status after startup
+      debug:
+        msg: "{{ startup_result }}"
+      
+    - name: enable docker to start on reboot
+      command: systemctl enable docker
+      become: True      
+      
+    
     
