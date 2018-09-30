@@ -1,0 +1,16 @@
+---
+  - hosts: localhost
+    tasks: 
+    - name: pull jenkins image
+      docker_image:
+        name: jenkins
+  
+  # TODO Here make image from Dockerfile and transport it to the host machine
+  # commands: 
+  # - docker build -t jenkins_img .
+  # - docker run -d jenkins_img
+  # - docker exec -i -t <container_name> /bin/bash
+  # - docker stop <container_name>
+  # - docker rm <container_name>
+  # - docker rmi jenkins_img
+  
