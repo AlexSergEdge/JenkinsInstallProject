@@ -1,3 +1,4 @@
 # Playbook retry file
 play.retry
-jenkins_play.yml
+jenkins_play.retry
+jenkins_play2.retry

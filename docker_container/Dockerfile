@@ -7,5 +7,5 @@ WORKDIR /jenkins_image
 # Container directory
 COPY . /jenkins_image
 
-# Make port 8080 avaiable to the world outside
+# Make container avaiable via port 8080
 EXPOSE 8080

@@ -4,7 +4,7 @@
     - name: pull jenkins image
       docker_image:
         name: jenkins
-  
+          
   # TODO Here make image from Dockerfile and transport it to the host machine
   # commands: 
   # - docker build -t jenkins_img .

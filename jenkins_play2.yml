@@ -1,0 +1,35 @@
+# This playbook is used to build image on remote host
+---
+  - hosts: 192.168.10.20
+    tasks:
+    
+    - name: create folder on host
+      file: path=~/docker_containers state=directory
+      become: True
+     
+    - name: upload container directory to the docker host
+      synchronize: src=docker_container dest=~/docker_containers
+      become: True
+      
+    - name: building image from Dockerfile
+      docker_image: >
+        name=build-by-ansible
+        tag=jenkins_img
+        path=~/docker_containers/docker_container
+        state=present
+
+    - name: run docker container
+      command: docker run -d --name jenkins_cont build-by-ansible:jenkins_img
+    
+    - name: check containers
+      command: docker container ls
+      register: docker_containers_list
+    
+    - name: print check result
+      debug:
+        msg: "{{ docker_containers_list }}"
+    
+    - name: Stop a container
+      docker_container:
+        name: jenkins_cont
+        state: stopped

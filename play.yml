@@ -50,7 +50,13 @@
       
     - name: enable docker to start on reboot
       command: systemctl enable docker
-      become: True      
+      become: True
       
+    - name: install docker for python
+      pip:
+        name: docker
+        state: present 
+      become: True     
+    
     
     
