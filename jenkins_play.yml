@@ -1,9 +1,35 @@
 ---
   - hosts: localhost
     tasks: 
-    - name: pull jenkins image
+    
+    - name: building image from Dockerfile locally
       docker_image:
-        name: jenkins
+        name: ansible_images
+        path: docker_container
+        tag: jenkins_img
+        state: present
+       
+    - name: run docker container locally
+      docker_container:
+        image: ansible_images:jenkins_img
+        name: jenkins_cont
+        state: started
+    
+    - name: check containers
+      command: docker container ls
+      register: docker_containers_list
+    
+    - name: print check result
+      debug:
+        msg: "{{ docker_containers_list }}"
+    
+    - name: stop docker container
+      docker_container:
+        name: jenkins_cont
+        state: stopped
+    
+    
+    
           
   # TODO Here make image from Dockerfile and transport it to the host machine
   # commands: 
