@@ -1,4 +1,11 @@
 ---
+  - hosts: 192.168.10.20
+    tasks:
+    
+    - name: create folder on host
+      file: path=~/docker_image_archive state=directory
+      become: True
+  
   - hosts: localhost
     tasks: 
     
@@ -8,8 +15,24 @@
         path: docker_container
         tag: jenkins_img
         state: present
-       
-    - name: run docker container locally
+        archive_path: docker_container/archive
+         
+  - hosts: 192.168.10.20
+    tasks:
+    
+    - name: copy image to host
+      copy:
+        src: docker_container/
+        dest: ~/docker_image_archive
+    
+    - name: build docker image from archive
+      docker_image:
+        name: ansible_images
+        tag: jenkins_img
+        state: present
+        load_path: ~/docker_image_archive/archive
+    
+    - name: run docker container on remote host
       docker_container:
         image: ansible_images:jenkins_img
         name: jenkins_cont
@@ -27,16 +50,3 @@
       docker_container:
         name: jenkins_cont
         state: stopped
-    
-    
-    
-          
-  # TODO Here make image from Dockerfile and transport it to the host machine
-  # commands: 
-  # - docker build -t jenkins_img .
-  # - docker run -d jenkins_img
-  # - docker exec -i -t <container_name> /bin/bash
-  # - docker stop <container_name>
-  # - docker rm <container_name>
-  # - docker rmi jenkins_img
-  

@@ -2,3 +2,4 @@
 play.retry
 jenkins_play.retry
 jenkins_remote_play.retry
+docker_container/archive

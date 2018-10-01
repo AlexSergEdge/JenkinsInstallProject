@@ -1,3 +1,11 @@
+  # Docker commands: 
+  # - docker build -t jenkins_img .
+  # - docker run -d jenkins_img
+  # - docker exec -i -t <container_name> /bin/bash
+  # - docker stop <container_name>
+  # - docker rm <container_name>
+  # - docker rmi jenkins_img
+
 # This playbook is used to build image on remote host
 ---
   - hosts: 192.168.10.20
