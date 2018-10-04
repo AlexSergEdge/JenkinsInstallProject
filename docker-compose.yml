@@ -1,0 +1,10 @@
+version: '3'
+
+services: 
+  jenkins-service: 
+    build: ./docker_container
+    volumes: 
+      - ./docker_container/conf:/var/jenkins_home
+    ports:
+      - 8080:8080
+      - 50000:50000
