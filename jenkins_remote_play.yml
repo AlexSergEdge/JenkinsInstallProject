@@ -9,7 +9,7 @@
   
   
   
-  # docker-compose commands:
+  # docker-compose commands for startup:
   # - docker container up -d
   # - docker exec -i -t <container_name> /bin/bash
   # - exit
