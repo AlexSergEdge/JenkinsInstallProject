@@ -1,0 +1,32 @@
+Started by user [8mha:////4Fl/IBl/+3XcMI/tcRn+O3OkEHgnyO17QHhxJACTJlpHAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building in workspace /var/jenkins_home/workspace/environment_vars_list
+[environment_vars_list] $ /bin/sh -xe /tmp/jenkins3706931575251985191.sh
++ echo BUILD_NUMBER :: 2
+BUILD_NUMBER :: 2
++ echo BUILD_ID :: 2
+BUILD_ID :: 2
++ echo BUILD_DISPLAY_NAME :: #2
+BUILD_DISPLAY_NAME :: #2
++ echo JOB_NAME :: environment_vars_list
+JOB_NAME :: environment_vars_list
++ echo JOB_BASE_NAME :: environment_vars_list
+JOB_BASE_NAME :: environment_vars_list
++ echo BUILD_TAG :: jenkins-environment_vars_list-2
+BUILD_TAG :: jenkins-environment_vars_list-2
++ echo EXECUTOR_NUMBER :: 0
+EXECUTOR_NUMBER :: 0
++ echo NODE_NAME :: master
+NODE_NAME :: master
++ echo NODE_LABELS :: master
+NODE_LABELS :: master
++ echo WORKSPACE :: /var/jenkins_home/workspace/environment_vars_list
+WORKSPACE :: /var/jenkins_home/workspace/environment_vars_list
++ echo JENKINS_HOME :: /var/jenkins_home
+JENKINS_HOME :: /var/jenkins_home
++ echo JENKINS_URL ::
+JENKINS_URL ::
++ echo BUILD_URL ::
+BUILD_URL ::
++ echo JOB_URL ::
+JOB_URL ::
+Finished: SUCCESS
