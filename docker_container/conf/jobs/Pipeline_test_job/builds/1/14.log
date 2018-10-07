@@ -1,0 +1,3 @@
+[Pipeline_test_job] Running shell script
++ python --version
+Python 2.7.13

@@ -1,0 +1,18 @@
+Cloning the remote Git repository
+Cloning repository https://github.com/AlexSergEdge/JenkinsInstallProject
+ > git init /var/jenkins_home/workspace/Pipeline_test_job # timeout=10
+Fetching upstream changes from https://github.com/AlexSergEdge/JenkinsInstallProject
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/AlexSergEdge/JenkinsInstallProject +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/AlexSergEdge/JenkinsInstallProject # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/AlexSergEdge/JenkinsInstallProject # timeout=10
+Fetching upstream changes from https://github.com/AlexSergEdge/JenkinsInstallProject
+ > git fetch --tags --progress https://github.com/AlexSergEdge/JenkinsInstallProject +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 7291f97227095a64955e4dda3aad03be5d6eeefe (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 7291f97227095a64955e4dda3aad03be5d6eeefe
+Commit message: "Updated Jenkins image version"
+First time build. Skipping changelog.
