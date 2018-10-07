@@ -1,0 +1,6 @@
+[Pipeline_test_job] Running shell script
++ python ./library/python_module.py
+Traceback (most recent call last):
+  File "./library/python_module.py", line 1, in <module>
+    import numpy as np
+ImportError: No module named numpy
