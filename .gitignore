@@ -5,4 +5,4 @@ jenkins_remote_play.retry
 docker_container/archive
 docker_container/conf/*
 !docker_container/conf/.gitkeep
-!docker_container/conf/jobs/
+# !docker_container/conf/jobs/
