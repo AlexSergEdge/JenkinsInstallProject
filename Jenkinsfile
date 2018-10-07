@@ -2,21 +2,10 @@ pipeline {
 	
 	agent any
 	
-	stages {
-	
-	    stage('Provision with numpy') {
-	        steps {
-	        	echo 'Installing pip'
-	            sh 'apt update'
-	            sh 'apt install python-pip'
-	            echo 'Installing numpy'
-	            sh 'pip install numpy'
-	        }
-	    }
-	
+	stages {	
 		stage('Test') {
 			steps {
-			    echo 'Starting module...'
+			    echo 'Starting module'
 				sh 'python ./library/python_module.py'
 			}
 		}
