@@ -5,8 +5,8 @@ pipeline {
 	stages {
 		stage('Test') {
 			steps {
-				sh 'python --version'
-				echo 'testing...'
+			    echo 'Starting module...'
+				sh 'python ./library/*'
 			}
 		}
 	}	
