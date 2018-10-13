@@ -15,6 +15,20 @@
   # - exit
   # - docker-compose down --rmi all
   
+  # docker build -f ./docker_container/Dockerfile -t jenkins_image ./docker_container
+  # 
+  # Also use:
+  # --build-arg (set build time variables)
+  # 
+  # 
+  
+  
+  
+  # docker run -d --name jenkins_container -p 8080:8080 -p 50000:50000 -v ~/projects/docker_remote_install/docker_container/conf:/var/jenkins_home jenkins_image
+  # docker run -d --name jenkins_container -p 8080:8080 -p 50000:50000 -v "$(pwd)"/docker_container/conf:/var/jenkins_home jenkins_image
+  # docker run -d --name jenkins_container -p 8080:8080 -p 50000:50000 --mount type=bind,source="$(pwd)"/docker_container/mountdir,target=/mountdir jenkins_image
+  
+  
 
 # This playbook is used to build image on remote host
 ---
